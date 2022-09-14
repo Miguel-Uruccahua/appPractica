@@ -17,6 +17,7 @@ class Category : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
+        viewmModel.getCategory()
 
         buttonrandom.setOnClickListener{
             viewmModel.getCategory()
@@ -41,5 +42,10 @@ class Category : AppCompatActivity() {
         }
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        viewmModel.getCategory()
+    }
 
 }
